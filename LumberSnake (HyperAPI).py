@@ -132,7 +132,7 @@ def HyperSnake(vizqlfile):
 
     with HyperProcess(telemetry=Telemetry.SEND_USAGE_DATA_TO_TABLEAU) as hyper:
         with Connection(endpoint=hyper.endpoint,database=path_to_database) as connection:
-           connection.execute_command(command=
+            connection.execute_command(command=
                 f'''
                  CREATE TABLE IF NOT EXISTS dump_table AS (
                     SELECT * from {escape_string_literal(vizqlfile)} 
